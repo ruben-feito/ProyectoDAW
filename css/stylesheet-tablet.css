@@ -1,0 +1,521 @@
+/* Colores */
+:root{
+	--claro: #C9E8BF;
+	--medio: #BEE4B1;
+	--oscuro: #9CBB91;
+	--azul: #9AAAD6;
+	--crema: cornsilk;
+	--blanco:#F9FCF7;
+}
+/* Eliminar padding y margenes predefinidos */
+*{
+	padding:0px;
+	margin:0 auto;
+}
+html{
+	background-color: var(--blanco);
+	background-image: url('.././img/craft-paper.jpg');
+}
+
+/*Banner-Header----------------------------------------------------------------------*/
+header div#banner img{
+	display:none; /*Quitar la Imagen banner*/
+}
+/*Menu-Nav---------------------------------------------------------------------------*/
+.menu {
+    background: white;
+    color: black;
+    position: relative;
+	width: 100%;
+	height: 65px;
+	z-index: 9999;
+	opacity: 1;
+}
+.menu > input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+.menu > label {
+    /*cursor: pointer; Para mostrar el icono del raton*/
+    display: block;
+    font: 1.75em/1 Droid Sans;
+    padding: 0.5em;
+}
+/* Logo */
+.logo img{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    top: 0px;
+    left: 50%;
+    margin-left: -32.5px;
+}
+/* Icono Hamburguesa */
+#menu-icon,#menu-icon:before,#menu-icon:after {
+    background: #1d1f20;
+    border-radius: 0.05em;
+    height: 0.2em;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+#menu-icon {
+    display: inline-block;
+    margin: 0.4em 0;
+    max-width: 1em;
+    position: relative;
+}
+nav label #menu-icon {
+    float: right;
+}
+#menu-icon:before,#menu-icon:after {
+    content: '';
+    left: 0;
+    position: absolute;
+}
+#menu-icon:before {
+    top: -0.4em;
+}
+#menu-icon:after {
+    bottom: -0.4em;
+}
+/* Icono Cierre */
+nav input[type=checkbox]:checked + label #menu-icon {
+    background-color: transparent;
+}
+nav input[type=checkbox]:checked + label #menu-icon:before {
+    top: 0;
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+nav input[type=checkbox]:checked + label #menu-icon:after {
+    bottom: 0;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* Overlay */
+nav input:checked ~ #overlay {
+	background: white;
+	opacity: 0.95;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+}
+/* List */
+nav ul {
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    font-size: 4vw;
+    list-style: none;
+    margin: 0;
+    line-height: 50px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+	text-align: center;
+}
+nav input:checked ~ ul {
+    margin: 1em;
+    max-height: inherit;
+    opacity: 1;
+}
+nav ul > li {
+    margin: 0.5em 0;
+}
+nav ul a {
+    color: black;
+    text-decoration: none;
+}
+.fixed{
+	position:fixed; 
+	top:0px;
+}
+
+/*Main------------------------------------------------------------------------*/
+article > div, article > h2{
+	font-family: "Droid Sans";
+	font-size: 1.75vw;
+	text-align: justify;
+}
+
+/*Quienes Somos--------------------------------------------------------------*/
+article#quienes > div{
+	background-color: transparent;
+	text-align: justify;
+	padding-top: 15px;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	font-family: Corradine HW, Droid Sans, Arial;
+	word-spacing: 0.4em;
+	letter-spacing: 0.1em;
+	/*background-image: url('.././img/craft-paper.jpg');*/
+	background-repeat: repeat;
+	background-size: 50%;
+	font-size: 3vw;
+}
+article#quienes > div > p:first-of-type{
+    font-size: 4vw;
+    text-align: center;
+}
+article#quienes > div > p:last-of-type{
+    text-align: center;
+}
+
+@media (orientation: landscape){ /*Apaisado*/
+	article#quienes > div{
+		font-size: 3vw;
+	}
+}
+
+/*Comidas---------------------------------------------------------------------*/
+article#comidas {
+	transform: skew(0deg, -6deg) translateY(140px);
+	background-color: var(--oscuro);
+	height: 900px;
+	z-index:2;
+}
+article#comidas > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transform: skew(0deg, 6deg);
+	padding-top: 10vw;
+	width: 100%;
+}
+article#comidas > div > h2{
+	padding-top: 20px;
+	font-size: 5vw;
+	padding-bottom: 20px;
+}
+article#comidas div#slider {
+	position: relative;
+	overflow: hidden;
+	border-radius: 5px;
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+article#comidas div#slider ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 200px;
+	width: 100%;
+	list-style: none;
+}
+article#comidas div#slider ul li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 500px;
+	height: 300px;
+	background: transparent;
+}
+article#comidas div#slider img{
+	width: 100%;
+}
+a.control_prev, a.control_next {
+	position: absolute;
+	top: 40%;
+	z-index: 98;
+	display: block;
+	padding: 4% 3%;
+	width: auto;
+	height: auto;
+	background: var(--azul);
+	color: var(--blanco);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 18px;
+	opacity: 0.8;
+	cursor: pointer;
+}
+a.control_prev:hover, a.control_next:hover {
+	opacity: 1;
+	transition: 0.3s;
+}
+a.control_prev {
+	border-radius: 0 2px 2px 0;
+}
+a.control_next {
+	right: 0;
+	border-radius: 2px 0 0 2px;
+}
+article#comidas div.texto{
+	font-size: 4vw;
+	padding: 20px;
+	text-align: justify;
+	line-height: 120%;
+}
+div#local{
+	padding: 0px;
+	z-index:1;
+	background-color: var(--medio);
+}
+div#local img{
+	width: 100%;
+}
+@media (orientation: landscape){ /*Apaisado*/
+	article#comidas{
+		height: 700px;
+	}
+	article#comidas > div > h2{
+		font-size: 3vw;
+	}
+	article#comidas div.texto{
+		font-size: 2vw;
+	}
+}
+
+/*Carta-----------------------------------------------------------------------------*/
+article#carta {
+	padding: 0px;
+	background-color: var(--medio);
+	padding: 0px;
+	height: 80vw;
+	overflow: hidden;
+}
+article#carta h2{
+	padding-left: 20px;
+	font-size: 5vw;
+	padding-top: 70px;
+}
+article#carta div#mesas{
+	display: none;
+}
+article#carta > div.texto{
+	padding: 20px;
+	font-size: 4vw;
+	text-align: justify;
+	line-height: 120%;
+}
+article#carta div div:last-of-type{
+	width: 30vw;
+	border-radius: 5px;
+	background-color: var(--oscuro);
+	border: 1px solid;
+	padding: 1vw;
+	text-align: center;
+}
+article#carta div div a{
+	text-decoration: none;
+	color: black;
+}
+article#carta div div:last-of-type:hover{
+	background-color: var(--blanco);
+	transition: 0.3s;
+}
+@media (orientation: landscape){ /*Apaisado*/
+	article#carta {
+		height: 40vw;
+	}
+	article#carta h2{
+		font-size: 3vw;
+	}
+	article#carta > div.texto{
+		font-size: 2vw;
+	}
+}
+
+/*Reservas---------------------------------------------------------------------*/
+article#reservas span{
+    font-family: Droid Sans Bold;
+}
+article#reservas > div{
+	background-color: var(--crema);
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 3vw;
+}
+article#reservas > div > div:first-of-type{
+	height: 90px;
+	background: linear-gradient(176deg, var(--oscuro) 70%, transparent 71%);
+	padding-top: 38px;
+}
+article#reservas h2{
+	padding-top: 30px;
+	padding-left: 20px;
+	font-size: 5vw;
+}
+article#reservas div#formulario{
+	display: block;
+	background-color: var(--medio);
+	padding: 1vw;
+	width: 50%;
+	height: 50%;
+	font-size: 3vw;
+}
+article#reservas div#formulario input{
+	width: 49vw;
+	background-color: var(--blanco);
+}
+article#reservas div#formulario select{
+	width: 50vw;
+	background-color: var(--blanco);
+}
+article#reservas div#formulario input#disp{
+	margin-left: 25%;
+	width: 25vw;
+	border-radius: 5px;
+	background-color: var(--oscuro);
+	border: 1px solid;
+	padding: 1vw;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+article#reservas div#formulario input#disp:hover{
+	background-color: var(--blanco);
+	transition: 0.3s;
+}
+@media (orientation: landscape){ /*Apaisado*/
+	article#reservas h2{
+		font-size: 3vw;
+	}
+	article#reservas div#formulario{
+		font-size: 2vw;
+	}
+	article#reservas div#formulario{
+		width: 40%;
+		height: 50%;
+	}
+	article#reservas div#formulario input{
+		width: 39vw;
+	}
+	article#reservas div#formulario select{
+		width: 40vw;
+	}
+	article#reservas div#formulario input#disp{
+		width: 15vw;
+		margin-left: 30%;
+	}
+}
+
+/*Contacto--------------------------------------------------------------------------*/
+article#contacto {
+	padding-top: 38px;
+	background-color: var(--oscuro);
+}
+article#contacto h2{
+	padding-top: 30px;
+	padding-left: 20px;
+	font-size: 5vw;
+}
+article#contacto div#mapa iframe{
+	display: block;
+	width: 100%;
+	height: 50vw;
+	margin-top: 2vw;
+	margin-bottom: 2vw;
+}
+article#contacto div.texto{
+	position: relative;
+	font-size: 3vw;
+	padding: 20px;
+	text-align: justify;
+	line-height: 120%;
+}
+article#contacto div.texto a{
+	font-family: Droid Sans Bold;
+	color: black;
+	text-decoration: none;
+}
+@media (orientation: landscape){ /*Apaisado*/
+	article#contacto h2{
+		font-size: 3vw;
+	}
+	article#contacto div.texto{
+		font-size: 2vw;
+	}
+}
+
+/*Comentarios ----------------------------------------------------------------------*/
+div#slider2 { 
+	padding-top: 30px;	
+	overflow: hidden; 
+}
+div#slider2 div img { 
+	width: 20%; 
+	float: left; }
+div#slider2 div { 
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	text-align: left;
+	font-size: 0;
+	animation: 20s slider2 infinite; 
+}
+@keyframes slider2 {
+	0% { left: 0%; }
+	20% { left: 0%; }
+	25% { left: -100%; }
+	45% { left: -100%; }
+	50% { left: -200%; }
+	70% { left: -200%; }
+	75% { left: -300%; }
+	95% { left: -300%; }
+	100% { left: -400%; }
+}
+@media (orientation: landscape){ /*Apaisado*/
+	div#slider2 { 
+		width: 90%;
+	}
+}
+
+/*Footer----------------------------------------------------------------------------*/
+section img#prefooter{
+	display: block;
+	width: 20vw;
+}
+.wrapper{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+.footer, .push{
+	margin-top: 0px;
+	height: 2em;
+}
+footer{
+	padding: 20px;
+	background-color: var(--azul);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+footer > div > div{
+	float:left;
+	margin: 2px;
+}
+#face img, #insta img, #trip img{
+	width: 30px;
+}
+
+/*Carga de fuentes-----------------------------------------------------------------*/
+@font-face{ 
+	font-family:Droid Sans; 
+	src: url('.././fonts/DroidSans.ttf'); 
+}
+@font-face{ 
+	font-family:Droid Sans Bold; 
+	src: url('.././fonts/DroidSans-Bold.ttf'); 
+}
+@font-face{ 
+	font-family: Corradine HW; 
+	src: url('.././fonts/CorradineHandwriting.otf'); 
+}
