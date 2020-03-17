@@ -1,3 +1,7 @@
+<?php
+	include "./db/db_conexion.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -13,6 +17,7 @@
 		<script src="./js/posicionarMenu.js"></script>
 		<script src="./Js/cerrarMenu.js"></script>
 		<script src="./js/slider.js"></script>     
+		<script src="./js/reservas.js"></script>     
 	</head>
 	<body>
 		<header>
@@ -84,10 +89,9 @@
 						<div id="formulario">
 							<p><span>Reservas El Rincon Del "Sin"</span></p>
 							<?php
-								include "./db/db_conexion.php";
 								$comensales = $fecha = $hora = $email = null; //declaracion en una linea
 								$disponibilidad=false;
-								require("disponibilidad.php");
+								require_once("disponibilidad.php");
 								require_once("reserva.php");
 							?>
 						</div>

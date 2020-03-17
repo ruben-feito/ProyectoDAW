@@ -3,7 +3,7 @@
 if (!isset($_POST) || empty($_POST)) { //Se muestra el formulario la primera vez
 
 ?>
-<form method="POST" action="" target="reservas">
+<form method="POST" action="" target="">
     <p>Seleccione el número de comensales</p>
     <p>Comensales</p>
     <select name="comensales"> 

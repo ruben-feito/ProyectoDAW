@@ -4,10 +4,12 @@ if($disponibilidad){ //si el formulario previo fue correcto
 
 ?>
 
-    <form method="POST" action="" target="reservas">
+    <form method="POST" action="" target="">
         <p><i><?php echo $comensales ?> Comensales, Dia: <?php echo $fecha ?>, Hora: <?php echo $hora ?></php></i></p>
         <p>Email:</p>
         <input type="email" name="email"></input></br>
+        <p>Telefono:</p>
+        <input type="tel" name="telefono"></input></br>
         <input type="hidden" name="fecha" value="<?php echo $fecha ?>">
         <input type="hidden" name="hora" value="<?php echo $hora ?>">
         <input type="hidden" name="comensales" value="<?php echo $comensales ?>">
@@ -29,7 +31,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST" && $_POST['form']=='Reservar') { //compro
 
     $email=$_REQUEST["email"]; //el del formulario
 
-    reservar($comensales, $fecha, $hora, $email);
+    $telefono=$_REQUEST["telefono"]; //el del formulario
+
+    reservar($comensales, $fecha, $hora, $email, $telefono);
     
 ?>
     <p>Reserva Realizada sobre el email: <?php echo $email ?></p>
@@ -40,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST" && $_POST['form']=='Reservar') { //compro
 //function para atacar la BD ingresando la reserva
 //parametros los pedidos por formularios: comensales, fecha, hora y email
 //no devuelve nada
-function reservar($comensales, $fecha, $hora, $email){
+function reservar($comensales, $fecha, $hora, $email, $telefono){
 
     $conn=conectarBD(); //la conexion dentro para solo abrirla en la reservas y no a todo aquel que entre en la web
 
@@ -51,11 +55,19 @@ function reservar($comensales, $fecha, $hora, $email){
     $existe=$row['email'];
 
     if($existe==0){
-        //insertar en tabla cliente un nuevo cliente registrando su primera reserva (con TIMESTAMP)
-        $sql = "INSERT INTO cliente (email) VALUES ('$email')";
+        //insertar en tabla cliente un nuevo cliente registrando su primera ultima reserva (ultimo_registro con TIMESTAMP)
+        $sql = "INSERT INTO cliente (email, telefono) VALUES ('$email', '$telefono')";
         if(!mysqli_query($conn, $sql)){
             echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
         }
+    }
+    else{
+        //si ya existe se actualiza el telefono y su ultima reserva (ultimo_registro con TIMESTAMP)
+        $sql="UPDATE cliente SET telefono=$telefono WHERE email='$email'";
+        if(!mysqli_query($conn, $sql)){
+            echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
+        }
+        mysqli_commit($conn);
     }
     
     //insertar en tabla reservas la nueva reserva

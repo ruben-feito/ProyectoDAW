@@ -4,7 +4,8 @@ USE restaurante;
 
 CREATE TABLE IF NOT EXISTS cliente (
     email VARCHAR(30) NOT NULL PRIMARY KEY,
-    primera_reserva TIMESTAMP
+    telefono INT UNSIGNED NOT NULL,
+    ultimo_registro TIMESTAMP
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS reserva (
@@ -19,6 +20,5 @@ CREATE TABLE IF NOT EXISTS reserva (
     REFERENCES cliente (email)
     ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
-
 
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'rootroot';

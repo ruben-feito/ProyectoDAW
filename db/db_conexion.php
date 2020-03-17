@@ -29,4 +29,3 @@ function desconectarBD($conn){
     mysqli_close($conn);
 }
 ?>
-?>
