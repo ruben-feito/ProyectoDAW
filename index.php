@@ -7,7 +7,7 @@
 	<head>
 		<title>El Rinc&oacute;n del "Sin"</title>
 		<meta charset="UTF-8"/>
-		<meta name="author" content="Rubén Feito, Jesús Mateos, Samuel Villar">
+		<meta name="author" content="Rubén Feito Alberto Jimenez y Jesús Mateos">
 		<link rel="icon" href="./img/logo2.png"/> <!--Fab Icon -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--viweport-->
 		<link rel="StyleSheet" media="only screen and (max-device-width:760px)" href="./css/stylesheet-movil.css" type="text/css">
@@ -25,8 +25,8 @@
 		</header>
 		<nav>
 			<menu class="menu" class="fixed">
-				<input id="responsive-menu" type="checkbox">
-				<label for="responsive-menu">Menú<span id="menu-icon"></span><div class="logo"><img src="./img/logo.png" alt="Imagen del logotipo"></div></label>
+				<input id="menu-responsivo" type="checkbox">
+				<label for="menu-responsivo">Menú<span id="menu-icon"></span><div class="logo"><img src="./img/logo.png" alt="Imagen del logotipo"></div></label>
 				<div id="overlay"></div>
 				<ul onclick="cerrarMenu()">
 					<li><a href="#">INICIO</a></li>
@@ -77,7 +77,6 @@
 					<h2>CARTA</h2>
 					<div class="texto">
 						<p>Las materias primas sin gluten de primera calidad, que componen nuestros exquisitos platos elaborados con dedicaci&oacute;n por nuestra chef, hacen de nuestro restaurante un lugar &uacute;nico para disfrutar del buen sabor de la comida.</p>
-
 						<p>Para un picoteo en barra y perfecto para el aperitivo, se ofrecen pinchos y raciones para compartir, como una de las mejores opciones para comer de manera informal.</p>
 					 	</br>
 						<div><a href="Carta_Actualizada.pdf" target="_blank">Ver Carta</a></div>
@@ -91,8 +90,8 @@
 							<?php
 								$comensales = $fecha = $hora = $email = null; //declaracion en una linea
 								$disponibilidad=false;
-								require_once("disponibilidad.php");
-								require_once("reserva.php");
+								require_once("./php/disponibilidad.php");
+								require_once("./php/reserva.php");
 							?>
 						</div>
 					</div>	

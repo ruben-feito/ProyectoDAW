@@ -1,3 +1,3 @@
 function cerrarMenu(){
-    document.getElementById("responsive-menu").checked = false;
+    document.getElementById("menu-responsivo").checked=false;
 }
