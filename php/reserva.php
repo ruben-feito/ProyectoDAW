@@ -6,7 +6,7 @@ if($disponibilidad){ //si el formulario previo fue correcto
     <form method="POST" action="" target="">
         <p><i><?php echo $comensales ?> Comensales, Dia: <?php echo $fecha ?>, Hora: <?php echo $hora ?></php></i></p>
         <p>Email:</p>
-        <input type="email" name="email" pattern="^([a-zA-Z0-9_\\.\\-]+)@([a-zA-Z0-9_\\.\\-])\.([a-zA-Z\\.]{2,6})$" title="Debe ser un correo valido" required></input></br>
+        <input type="email" name="email" pattern="^([a-zA-Z0-9_\\.\\-]+)@([a-zA-Z0-9_\\.\\-]+)\.([a-zA-Z\\.]{2,6})$" title="Debe ser un correo valido" required></input></br>
         <p>Telefono:</p>
         <input type="tel" name="telefono" pattern="^[6789][\d]{8}$" title="Debe empezar por 6, 7, 8 o 9 y ser de 9 digitos" required></input></br>
         <input type="hidden" name="fecha" value="<?php echo $fecha ?>">
