@@ -8,7 +8,7 @@ if($disponibilidad){ //si el formulario previo fue correcto
         <p>Email:</p>
         <input type="email" name="email" pattern="^([a-zA-Z0-9_\\.\\-]+)@([a-zA-Z0-9_\\.\\-]+)\.([a-zA-Z\\.]{2,6})$" title="Debe ser un correo valido" required></input></br>
         <p>Telefono:</p>
-        <input type="tel" name="telefono" pattern="^[6789][\d]{8}$" title="Debe empezar por 6, 7, 8 o 9 y ser de 9 digitos" required></input></br>
+        <input type="tel" name="telefono" pattern="^[6789][0-9]{8}$" title="Debe empezar por 6, 7, 8 o 9 y ser de 9 digitos" required></input></br>
         <input type="hidden" name="fecha" value="<?php echo $fecha ?>">
         <input type="hidden" name="hora" value="<?php echo $hora ?>">
         <input type="hidden" name="comensales" value="<?php echo $comensales ?>">
@@ -19,8 +19,7 @@ if($disponibilidad){ //si el formulario previo fue correcto
 
 }
 
-if ($_SERVER["REQUEST_METHOD"]=="POST" && $_POST['form']=='Reservar') { //comprobacion de boton de submit correcto
-
+if ($_SERVER["REQUEST_METHOD"]=="POST" && $_POST['form']=="Reservar") { //comprobacion de boton de submit correcto
     $fecha=$_REQUEST["fecha"]; //en un campo hidden para poder pasarlo entre formularios
 
     $hora=$_REQUEST["hora"]; //en un campo hidden para poder pasarlo entre formularios
@@ -54,14 +53,15 @@ function reservar($comensales, $fecha, $hora, $email, $telefono){
     $existe=$row['email'];
 
     if($existe==0){
-        //insertar en tabla cliente un nuevo cliente registrando su primera ultima reserva (ultimo_registro con TIMESTAMP)
+        //insertar en tabla cliente un nuevo cliente registrando su primera ultimo pedido (ultimo_registro con TIMESTAMP)
         $sql = "INSERT INTO cliente (email, telefono) VALUES ('$email', '$telefono')";
         if(!mysqli_query($conn, $sql)){
             echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
         }
+        mysqli_commit($conn);
     }
     else{
-        //si ya existe se actualiza el telefono y su ultima reserva (ultimo_registro con TIMESTAMP)
+        //si ya existe se actualiza el telefono y su ultimo pedido (ultimo_registro con TIMESTAMP)
         $sql="UPDATE cliente SET telefono=$telefono WHERE email='$email'";
         if(!mysqli_query($conn, $sql)){
             echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
@@ -75,7 +75,6 @@ function reservar($comensales, $fecha, $hora, $email, $telefono){
         echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
     }
     
-
     desconectarBD($conn);
 }
 ?>

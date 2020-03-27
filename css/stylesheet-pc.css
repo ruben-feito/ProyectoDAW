@@ -44,7 +44,7 @@ nav input, nav label{ /*quitar el menu de movil*/
 	width: 100%;
 	font-size: 11pt;
 	font-family: "Droid Sans";
-	font-size: 12pt;
+	font-size: 11pt;
 	z-index: 99;
 }
 .menu > ul{
@@ -71,7 +71,7 @@ nav input, nav label{ /*quitar el menu de movil*/
 }
 .menu > ul > li{
 	float: left;
-	width: 20%;
+	width: 16.66666666666%;
 }
 section{ 
 	height: 2000px; 
@@ -257,6 +257,66 @@ article#carta div div a{
 	color: black;
 }
 article#carta div div:last-of-type:hover{
+	background-color: var(--blanco);
+	transition: 0.3s;
+}
+
+/*Pedidos----------------------------------------------------------------------*/
+article#pedidos span{
+    font-family: Droid Sans Bold;
+}
+article#pedidos > div{
+	background-color: var(--oscuro);
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 3vw;
+}
+article#pedidos > div > div:first-of-type{
+	height: 150px;
+	background: linear-gradient(176deg, var(--crema) 50%, transparent 51%);
+	padding-top: 38px;
+}
+article#pedidos h2{
+	padding-left: 2vw;
+	font-size: 26pt;
+}
+article#pedidos div#formulario_pedido{
+	display: block;
+	background-color: var(--medio);
+	padding: 1vw;
+	width: 50%;
+	height: 50%;
+	font-size: 13pt;
+}
+article#pedidos div#formulario_pedido input{
+	width: 29vw;
+	background-color: var(--blanco);
+}
+article#pedidos div#formulario_pedido select{
+	width: 29.5vw;
+	background-color: var(--blanco);
+}
+article#pedidos div#formulario_pedido input#disp{
+	margin-left: 25%;
+	width: 15vw;
+	border-radius: 5px;
+	background-color: var(--oscuro);
+	border: 1px solid;
+	padding: 1vw;
+	margin-top: 10px;
+}
+article#pedidos div#formulario_pedido input#disp:hover{
+	background-color: var(--blanco);
+	transition: 0.3s;
+}
+article#pedidos div#formulario_pedido input#quitar{
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	background-color: var(--oscuro);
+	border: 1px solid;
+}
+article#pedidos div#formulario_pedido input#quitar:hover{
 	background-color: var(--blanco);
 	transition: 0.3s;
 }

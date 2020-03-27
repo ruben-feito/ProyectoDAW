@@ -1,7 +1,8 @@
 <?php
+	session_start();
 	include "./db/db_conexion.php";
+	ob_start(); //Activa el almacenamiento en búfer de la salida para poder hacer headers y setcookie
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -17,7 +18,7 @@
 		<script src="./js/posicionarMenu.js"></script>
 		<script src="./Js/cerrarMenu.js"></script>
 		<script src="./js/slider.js"></script>     
-		<script src="./js/reservas.js"></script>     
+		<script src="./js/pedidos-reservas.js"></script>     
 	</head>
 	<body>
 		<header>
@@ -32,6 +33,7 @@
 					<li><a href="#">INICIO</a></li>
 					<li><a href="#comidas" id="current">COMIDAS</a></li>
 					<li><a href="#carta" id="current" >CARTA</a>
+					<li><a href="#pedidos" id="current" >PEDIDOS</a>
 					<li><a href="#reservas" id="current">RESERVAS</a>
 					<li><a href="#contacto" id="current">CONTACTO</a>
 				</ul>
@@ -82,6 +84,18 @@
 						<div><a href="Carta_Actualizada.pdf" target="_blank">Ver Carta</a></div>
 					</div>
 				</article>
+				<article id="pedidos">  
+					<div>
+						<div><h2>PEDIDOS</h2></div>
+						<div id="formulario_pedido">
+							<p><span>Pedidos El Rincon Del "Sin"</span></p>
+							<?php
+								$email = $telefono = $direccion = null; //declaracion en una linea
+								require_once("./php/indice.php");
+							?>
+						</div>
+					</div>
+					</article>
 				<article id="reservas">
 					<div>
 						<div><h2>RESERVAS</h2></div>
@@ -144,3 +158,7 @@
 		</footer>
 	</body>	 
 </html>	
+
+<?php
+	ob_end_flush(); // enviar el búfer de salida
+?>
