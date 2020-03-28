@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION['id'])){ //si no existe sesion iniciada
+if(!isset($_SESSION['email'])){ //si no existe sesion iniciada
    header("location: ../index.php"); //lanzamos al login
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION['id'])){ //si no existe sesion iniciada
+if(!isset($_SESSION['email'])){ //si no existe sesion iniciada
     header("location: ../"); //lanzamos al login
 }
 
@@ -17,17 +17,17 @@ $id=$row['id'];
 //hacer que sumen las unidades
 if(!empty($_SESSION['cesta'][$id])){ //no deben de estar vacios al principio
     $unidades=$_SESSION['cesta'][$id]+(int)$unidades;
-    setcookie($_SESSION['id'], serialize($_SESSION['cesta']), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
+    setcookie($_SESSION['email'], serialize($_SESSION['cesta']), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
 }
 
 //guardarlo en el array asotiativo
 $_SESSION['cesta'][$id]=(int)$unidades;
-setcookie($_SESSION['id'], serialize($_SESSION['cesta']), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
+setcookie($_SESSION['email'], serialize($_SESSION['cesta']), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
 
 if(!empty($_SESSION['cesta'][$id]) && $_SESSION['cesta'][$id]<=0){ 
     //si las unidades son <=0 borrarlo de la cesta
     unset($_SESSION['cesta'][$id]);
-    setcookie($_SESSION['id'], serialize($_SESSION['cesta']), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
+    setcookie($_SESSION['email'], serialize($_SESSION['cesta']), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
 }
 
 header("Refresh:0"); //refrescar los cambios

@@ -288,16 +288,30 @@ article#pedidos div#formulario_pedido{
 	height: 50%;
 	font-size: 13pt;
 }
+article#pedidos div#login{
+	margin-left: 10vw;
+}
 article#pedidos div#formulario_pedido input{
 	width: 29vw;
 	background-color: var(--blanco);
+}
+article#pedidos div#formulario_pedido input{
+	width: 29vw;
+	background-color: var(--blanco);
+}
+article#pedidos div#pago input{
+	width: 30px;
+	background-color: var(--blanco);
+}
+article#pedidos div#pago input[type="text"]{
+	width: 120px;
 }
 article#pedidos div#formulario_pedido select{
 	width: 29.5vw;
 	background-color: var(--blanco);
 }
 article#pedidos div#formulario_pedido input#disp{
-	margin-left: 25%;
+	margin-left: 35%;
 	width: 15vw;
 	border-radius: 5px;
 	background-color: var(--oscuro);
@@ -319,6 +333,24 @@ article#pedidos div#formulario_pedido input#quitar{
 article#pedidos div#formulario_pedido input#quitar:hover{
 	background-color: var(--blanco);
 	transition: 0.3s;
+}
+article#pedidos table{
+	border-collapse: collapse;
+}
+article#pedidos table th:nth-child(2),article#pedidos table th:nth-child(3){
+	width: 100px;
+}
+article#pedidos table tr:nth-child(odd){
+	background-color: var(--oscuro);
+	text-align: center;
+	border: 1px solid black;
+	height: 30px;
+}
+article#pedidos table tr:nth-child(even){
+	background-color: var(--medio);
+	text-align: center;
+	border: 1px solid black;
+	height: 30px;
 }
 
 /*Reservas---------------------------------------------------------------------*/

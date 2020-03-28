@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION['id'])){ //si no existe sesion iniciada
+if(!isset($_SESSION['email'])){ //si no existe sesion iniciada
     header("location: ../"); //lanzamos al login
 }
 
@@ -42,9 +42,11 @@ else{
     
     ?>
     <input id="disp" type="button" value="Eliminar Todo" onclick="window.location.href='./php/vaciarCesta.php'"/>
-    <p>Forma de pago:</p>
-    <input id="disp" type="radio" name="pago" value="Efectivo" checked><label>Efectivo</label>
-    <input id="disp" type="radio" name="pago" value="Targeta"><label>Targeta</label>
+	<div id="pago">
+		<p>Forma de pago:</p>
+		<input type="radio" name="pago" value="Efectivo" checked><label>Efectivo</label><br>
+		<input type="radio" name="pago" value="Targeta"><label>Targeta</label><input type="text" name="targeta" size="16">
+	</div>
     <form action="" method="POST"><div><input id="disp" name="form" type="submit" value="Finalizar Pedido"></form>
     <?php
 }
