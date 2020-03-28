@@ -28,9 +28,12 @@ else{
 
         //boton de quitar producto
         ?>
-            <td><form action="./php/quitarPlato.php" method="POST">
-            <input type="hidden" name="plato_eliminar" value="<?php echo htmlspecialchars($id) ?>">
-            <input id="quitar" type="submit" name="form" value="X"></form></td>
+            <td>
+                <form action="./php/quitarPlato.php" method="POST">
+                <input type="hidden" name="plato_eliminar" value="<?php echo htmlspecialchars($id) ?>">
+                <input id="quitar" type="submit" name="form" value="X">
+                </form>
+            </td>
         <?php 
 
         echo "</tr>";
@@ -42,12 +45,14 @@ else{
     
     ?>
     <input id="disp" type="button" value="Eliminar Todo" onclick="window.location.href='./php/vaciarCesta.php'"/>
-	<div id="pago">
-		<p>Forma de pago:</p>
-		<input type="radio" name="pago" value="Efectivo" checked><label>Efectivo</label><br>
-		<input type="radio" name="pago" value="Targeta"><label>Targeta</label><input type="text" name="targeta" size="16">
-	</div>
-    <form action="" method="POST"><div><input id="disp" name="form" type="submit" value="Finalizar Pedido"></form>
+    <form action="" method="POST">
+        <div id="pago">
+            <p>Forma de pago:</p>
+            <input type="radio" name="pago" value="efectivo" checked><label>Efectivo</label><br>
+            <input type="radio" name="pago" value="targeta"><label>Targeta</label><input type="text" name="targeta" size="16">
+        </div>
+        <input id="disp" name="form" type="submit" value="Finalizar Pedido">
+    </form>
     <?php
 }
 

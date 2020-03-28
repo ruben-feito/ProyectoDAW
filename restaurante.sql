@@ -58,13 +58,29 @@ INSERT INTO plato VALUES
 (null, "Arroz a la Cubana", 8.00, "Infantil");
 
 CREATE TABLE IF NOT EXISTS pedido (
-    num_pedido INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    num_pedido INT UNSIGNED NOT NULL PRIMARY KEY,
     email VARCHAR(30) NOT NULL,
-    
+    metodo_pago VARCHAR(8) NOT NULL,
+    targeta INT UNSIGNED,
     fecha_registro TIMESTAMP,
   
     CONSTRAINT fk_email_pedido FOREIGN KEY (email) 
     REFERENCES cliente (email)
+    ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS desglose_pedido (
+    num_pedido INT UNSIGNED NOT NULL,
+    id_plato INT UNSIGNED NOT NULL,
+    unidades INT NOT NULL,
+
+    PRIMARY KEY (num_pedido, id_plato, unidades),
+  
+    CONSTRAINT fk_plato_desglose FOREIGN KEY (id_plato) 
+    REFERENCES plato (id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT fk_pedido_desglose FOREIGN KEY (num_pedido) 
+    REFERENCES pedido (num_pedido)
     ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
 

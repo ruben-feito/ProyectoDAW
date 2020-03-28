@@ -3,16 +3,12 @@
 if ($_SERVER["REQUEST_METHOD"]=="POST" && $_POST['form']=="Iniciar Sesion" && $_REQUEST["email"]!="" && $_REQUEST["telefono"]!="" && $_REQUEST["direccion"]!="") { //comprobacion de boton de submit correcto
 
     //extraccion de login
-    $email=$_REQUEST["email"];
-
-    $telefono=$_REQUEST["telefono"];
-
-    $direccion=$_REQUEST["direccion"];
-
-	$_SESSION['email']=$email; //guardamos la sesion con el id
+	$_SESSION['email']=$_REQUEST["email"]; //guardamos la sesion con el email
+	$_SESSION['telefono']=$_REQUEST["telefono"]; //guardamos la sesion con el telefono
+	$_SESSION['direccion']=$_REQUEST["direccion"]; //guardamos la sesion con la direccion
 	$_SESSION['cesta']=array(); //guardamos los productos
 
-	//buscar sesion con el nombre del id
+	//buscar sesion con el nombre del email
 	if(isset($_COOKIE[$_SESSION['email']])){ 
 		//deserializar para sacar la informacion
 		$_SESSION['cesta']=unserialize($_COOKIE[$_SESSION['email']]); //pasar datos de coockie a cesta
