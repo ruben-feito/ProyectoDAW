@@ -23,10 +23,10 @@ División de la página:
 - Los enlaces de RRSS redirigirán a las principales del servicio al no disponer de unas propias.
 
 BIBLIOGRAFÍA:
-https://codepen.io/
-https://colourco.de/
-https://dev.mysql.com/doc/
-https://www.php.net/manual/es/
-https://www.w3schools.com/
-https://es.stackoverflow.com/
-https://developer.mozilla.org/es/docs/Web
+- https://codepen.io/
+- https://colourco.de/
+- https://dev.mysql.com/doc/
+- https://www.php.net/manual/es/
+- https://www.w3schools.com/
+- https://es.stackoverflow.com/
+- https://developer.mozilla.org/es/docs/Web
