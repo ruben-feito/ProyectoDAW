@@ -1,7 +1,7 @@
 # Proyecto DAW
-##Restaurante El Rincón del 'Sin'.
+## Restaurante El Rincón del 'Sin'.
 
-###Rubén F., Alberto J. y Jesús M.
+### Rubén F., Alberto J. y Jesús M.
 
 DEFINICION DEL PROBLEMA: Desarrollar un sitio web responsivo y lo mas accesible posible de una empresa de restauración. Se tratará de una web en una sola página donde los enlaces redireccionarán a sí misma, pero en diferente altura. 
 Contará con un menú y las opciones de: Inicio, Comidas, Carta, Pedidos, Reservas y Contacto. Además, habrá que añadir comentarios de clientes y enlaces a redes sociales.
