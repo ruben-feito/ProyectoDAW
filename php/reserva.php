@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST" && $_POST['form']=="Reservar") { //compro
     reservar($comensales, $fecha, $hora, $email, $telefono);
     
 ?>
+	<br>
     <p>Reserva Realizada sobre el email: <?php echo $email ?></p>
     <input id="disp" type="button" name="atras" value="Atras" onclick="history.go(-2)"> 
 <?php

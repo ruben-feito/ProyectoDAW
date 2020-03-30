@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST" && $_POST['form']=="Iniciar Sesion" && $_
 		$_SESSION['cesta']=unserialize($_COOKIE[$_SESSION['email']]); //pasar datos de coockie a cesta
 	}
 	else{ //si no existe se crea
-		$cookie_name=$email;
+		$cookie_name=$_REQUEST["email"];
 		$cookie_value=$_SESSION['cesta']; 
 		//serializar para meter la informacion
 		setcookie($cookie_name, serialize($cookie_value), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
@@ -39,3 +39,4 @@ else{ //muestra el formulario sin pulsar submit
     <form>
     <?php
 }
+?>

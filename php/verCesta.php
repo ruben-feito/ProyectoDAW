@@ -10,7 +10,9 @@ if(count($_SESSION['cesta'])==0){
 else{
     $total=0;
     echo "<br><br>";
-    echo "<table><tr><th>Plato</th><th>Precio Unidad</th><th>Unidades</th><th></th></tr>";
+	echo '<form action="" method="POST"></form>'; //este form esta aqui puesto porque sino lo poniamos no se borra el primer registro, realmente no es correcto hacer esto, pero no encontrabaa el error. Si quieres porbarlo comenta esta linea y añade unos pedidos, veras que se borran todos menos el primero
+    echo "<table><tr><th>Plato</th><th>Precio Unidad</th><th>Unidades</th><th>Borrar</th></tr>";	
+				
     foreach ($_SESSION['cesta'] as $id => $unidades){
         echo "<tr>";
         $sql="SELECT nombre FROM plato WHERE id='$id'";
@@ -29,13 +31,13 @@ else{
         //boton de quitar producto
         ?>
             <td>
-                <form action="./php/quitarPlato.php" method="POST">
+                <form action="./php/quitarPlato.php" method="POST"> 
                 <input type="hidden" name="plato_eliminar" value="<?php echo htmlspecialchars($id) ?>">
+				
                 <input id="quitar" type="submit" name="form" value="X">
-                </form>
+                 </form> 
             </td>
         <?php 
-
         echo "</tr>";
         $total=$total+($precio*$unidades);
         $_SESSION['total']=$total; //sesion para el total
@@ -52,7 +54,7 @@ else{
             <input type="radio" name="pago" value="targeta"><label>Targeta</label><input type="text" name="targeta" size="16">
         </div>
         <input id="disp" name="form" type="submit" value="Finalizar Pedido">
-    </form>
+    </form> 
     <?php
 }
 

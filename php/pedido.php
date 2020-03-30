@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && $_REQUEST['form']=="Finalizar Pedido"){
     }
 	else{
 		//actualizar en tabla cliente el cliente añadiendo tlf y direccion y su TIMESTAMP
-        $sql="UPDATE cliente SET telefono=$telefono, direccion=$direccion WHERE email='$email'";
+        $sql="UPDATE cliente SET telefono=$telefono, direccion='$direccion' WHERE email='$email'";
         if(!mysqli_query($conn, $sql)){
             echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
         }
@@ -100,7 +100,7 @@ else{
         <?php endforeach; ?>
         </select>
         <div>
-            Unidades<input type="text" name="unidades" pattern="^([1-9])|([1-9][0-9]+)$" title="Solo se admiten numeros positivos">
+            Unidades<input type="text" name="unidades" pattern="^([1-9])|([1-9][0-9]+)$" title="Solo se admiten numeros positivos" required>
         </div>
         <input id="disp" type="submit" name="form" value="Añadir">
     <form>
