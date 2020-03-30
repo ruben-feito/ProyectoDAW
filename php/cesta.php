@@ -17,11 +17,7 @@ if ($unidades!=0) { //este if es "redundante" con el input de unidades de pedido
 	$row=mysqli_fetch_assoc($resultado);
 	$id=$row['id'];
 
-	//hacer que sumen las unidades
-	if(!empty($_SESSION['cesta'][$id])){ //no deben de estar vacios al principio
-		$unidades=$_SESSION['cesta'][$id]+(int)$unidades;
-		setcookie($_SESSION['email'], serialize($_SESSION['cesta']), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
-	}
+	
 
 	//guardarlo en el array asotiativo
 	$_SESSION['cesta'][$id]=(int)$unidades;
