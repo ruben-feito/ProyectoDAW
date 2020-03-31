@@ -8,6 +8,7 @@ if(isset($_SESSION['email'])){ //si existe sesion iniciada
 else{
    
     require_once("./php/login.php");
+    
 }
 
 ?>

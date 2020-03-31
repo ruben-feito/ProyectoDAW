@@ -17,8 +17,6 @@ if ($unidades!=0) { //este if es "redundante" con el input de unidades de pedido
 	$row=mysqli_fetch_assoc($resultado);
 	$id=$row['id'];
 
-	
-
 	//guardarlo en el array asotiativo
 	$_SESSION['cesta'][$id]=(int)$unidades;
 	setcookie($_SESSION['email'], serialize($_SESSION['cesta']), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
@@ -28,7 +26,6 @@ if ($unidades!=0) { //este if es "redundante" con el input de unidades de pedido
 		unset($_SESSION['cesta'][$id]);
 		setcookie($_SESSION['email'], serialize($_SESSION['cesta']), time() + (86400 * 30), "/"); // 86400 segundos = 1 día
 	}
-
 }
 
 header("Refresh:0"); //refrescar los cambios

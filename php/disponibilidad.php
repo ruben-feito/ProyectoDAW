@@ -1,4 +1,3 @@
-
 <?php
 
 if ($_SERVER["REQUEST_METHOD"]=="POST" && $_POST['form']=='Disponibilidad') { //comprobacion de boton de submit correcto
