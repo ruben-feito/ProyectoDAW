@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include "./db/db_conexion.php";
+	include "./php/db/db_conexion.php";
 	ob_start(); //Activa el almacenamiento en búfer de la salida para poder hacer headers y setcookie
 ?>
 <!DOCTYPE html>
@@ -90,8 +90,8 @@
 						<div id="formulario_pedido">
 							<p><span>Pedidos El Rincon Del "Sin"</span></p>
 							<?php
-								$email = $telefono = $direccion = null; //declaracion en una linea
-								require_once("./php/indice.php");
+								$email = $telefono = $direccion = null; //declaracion de variables
+								require_once("./php/controllers/c_indice.php");
 							?>
 						</div>
 					</div>
@@ -102,10 +102,10 @@
 						<div id="formulario">
 							<p><span>Reservas El Rincon Del "Sin"</span></p>
 							<?php
-								$comensales = $fecha = $hora = $email = null; //declaracion en una linea
+								$comensales = $fecha = $hora = $email = null; //declaracion de variables
 								$disponibilidad=false;
-								require_once("./php/disponibilidad.php");
-								require_once("./php/reserva.php");
+								require_once("./php/controllers/c_disponibilidad.php");
+								require_once("./php/controllers/c_reserva.php");
 							?>
 						</div>
 					</div>	
