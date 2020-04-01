@@ -14,22 +14,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && $_REQUEST['form']=="Finalizar Pedido"){
 
 }
 else{
-    //llenar array desplegable
-    require_once("./php/models/m_obtenerPlatos.php");
-    $conn=conectarBD();
-    $platos=obtenerPlatos($conn);
-    desconectarBD($conn);
-
     ?>
     <form method="POST" action="" target="">
         <input id="disp" type="button" value="Cerrar Sesion" onclick="window.location.href='./php/models/m_cerrar_sesion.php'"/>
         <p><span>Cesta del Pedido:</span></p>
-        <label for="plato">Platos:</label>
-        <select name="plato">
-        <?php foreach($platos as $plato) : ?>
-            <option> <?php echo $plato ?> </option>
-        <?php endforeach; ?>
+        <label>Tipo:</label>
+        <select id="lista_tipos" name="lista_tipos">
+            <option value="Entrantes" selected>Entrantes</option>
+            <option value="Pastas">Pastas</option>
+            <option value="Carnes">Carnes</option>
+            <option value="Postre">Postre</option>
+            <option value="Infantil">Infantil</option>
         </select>
+        <br>
+        <div id="lista_platos"></div>
         <div>
             Unidades<input type="text" name="unidades" pattern="^([1-9])|([1-9][0-9]+)$" title="Solo se admiten numeros positivos" required>
         </div>
@@ -46,7 +44,7 @@ else{
     if ($_SERVER["REQUEST_METHOD"]=="POST" && $_REQUEST['form']=="Añadir") { //comprobacion de boton de submit correcto
         //recogida de datos al pulsar submit
         $conn=conectarBD();
-
+        
         //cesta
         require_once("./php/models/m_cesta.php");
 
