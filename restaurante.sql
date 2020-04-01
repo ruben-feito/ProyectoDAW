@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS pedido (
     num_pedido INT UNSIGNED NOT NULL PRIMARY KEY,
     email VARCHAR(30) NOT NULL,
     metodo_pago VARCHAR(8) NOT NULL,
-    targeta INT UNSIGNED,
+    tarjeta INT UNSIGNED,
     fecha_registro TIMESTAMP,
   
     CONSTRAINT fk_email_pedido FOREIGN KEY (email) 
