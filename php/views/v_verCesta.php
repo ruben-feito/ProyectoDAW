@@ -51,7 +51,7 @@ else{
         <div id="pago">
             <p>Forma de pago:</p>
             <input type="radio" name="pago" value="efectivo" checked><label>Efectivo</label><br>
-            <input type="radio" name="pago" value="tarjeta"><label>tarjeta</label><input type="text" name="tarjeta" size="16">
+            <input type="radio" name="pago" value="tarjeta"><label>Tarjeta</label><input type="text" name="tarjeta" size="16">
         </div>
         <input id="disp" name="form" type="submit" value="Finalizar Pedido">
     </form> 
