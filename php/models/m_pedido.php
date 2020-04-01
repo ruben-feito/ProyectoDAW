@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION['email'])){ //si no existe sesion iniciada
+    header("location: ../../"); //lanzamos al login
+}
+
 $email=$_SESSION['email'];
 $telefono=$_SESSION['telefono'];
 $direccion=$_SESSION['direccion'];
