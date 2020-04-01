@@ -331,55 +331,6 @@ article#carta div div:last-of-type:hover{
 	}
 }
 
-/*Pedidos----------------------------------------------------------------------*/
-article#pedidos span{
-    font-family: Droid Sans Bold;
-}
-article#pedidos > div{
-	background-color: var(--oscuro);
-	padding: 0px;
-	margin: 0px;
-	padding-bottom: 3vw;
-}
-article#pedidos > div > div:first-of-type{
-	height: 150px;
-	background: linear-gradient(176deg, var(--crema) 50%, transparent 51%);
-	padding-top: 38px;
-}
-article#pedidos h2{
-	padding-left: 2vw;
-	font-size: 26pt;
-}
-article#pedidos div#formulario_pedido{
-	display: block;
-	background-color: var(--medio);
-	padding: 1vw;
-	width: 40%;
-	height: 50%;
-	font-size: 13pt;
-}
-article#pedidos div#formulario_pedido input{
-	width: 29vw;
-	background-color: var(--blanco);
-}
-article#pedidos div#formulario_pedido select{
-	width: 29.5vw;
-	background-color: var(--blanco);
-}
-article#pedidos div#formulario_pedido input#disp{
-	margin-left: 25%;
-	width: 15vw;
-	border-radius: 5px;
-	background-color: var(--oscuro);
-	border: 1px solid;
-	padding: 1vw;
-	margin-top: 10px;
-}
-article#pedidos div#formulario_pedido input#disp:hover{
-	background-color: var(--blanco);
-	transition: 0.3s;
-}
-
 /*Reservas---------------------------------------------------------------------*/
 article#reservas span{
     font-family: Droid Sans Bold;
