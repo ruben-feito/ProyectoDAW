@@ -1,6 +1,7 @@
 <?php
 
 include "./php/models/m_funcion_reserva.php";
+include "./php/models/m_funcion_enviarCorreo.php";
 
 if($disponibilidad){ //si el formulario previo fue correcto
 ?>

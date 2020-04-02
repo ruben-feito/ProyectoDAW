@@ -28,9 +28,8 @@ else{
         </select>
         <br>
         <div id="lista_platos"></div>
-        <div>
-            Unidades<input type="text" name="unidades" pattern="^([1-9])|([1-9][0-9]+)$" title="Solo se admiten numeros positivos" required>
-        </div>
+        <label>Unidades:</label>
+        <input type="text" name="unidades" pattern="^([1-9])|([1-9][0-9]+)$" title="Solo se admiten numeros positivos" required>
         <input id="disp" class="pedidos" type="submit" name="form" value="Añadir">
     <form>
     <?php

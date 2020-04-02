@@ -111,7 +111,7 @@ nav input:checked ~ #overlay {
     width: 100vw;
     z-index: -1;
 }
-/* List */
+/* Lista */
 nav ul {
     -moz-transition-duration: 1s;
     -webkit-transition-duration: 1s;
@@ -142,6 +142,13 @@ nav ul a {
 .fixed{
 	position:fixed; 
 	top:0px;
+}
+
+@media (orientation: landscape){ /*Apaisado*/
+	nav ul{
+		font-size: 3vw;
+		line-height: 25px;
+	}
 }
 
 /*Main------------------------------------------------------------------------*/
@@ -347,28 +354,43 @@ article#pedidos > div > div:first-of-type{
 	padding-top: 38px;
 }
 article#pedidos h2{
-	padding-left: 2vw;
-	font-size: 26pt;
+	padding-left: 20px;
+	font-size: 6vw;
+	padding-top: 30px;
+}
+article#pedidos div#login{
+	margin-left: 20vw;
 }
 article#pedidos div#formulario_pedido{
 	display: block;
 	background-color: var(--medio);
 	padding: 1vw;
-	width: 40%;
+	width: 90%;
 	height: 50%;
 	font-size: 13pt;
 }
+article#pedidos div#formulario_pedido label{
+	float: left;
+	width: 25%;
+}
 article#pedidos div#formulario_pedido input{
-	width: 29vw;
+	width: 50vw;
 	background-color: var(--blanco);
 }
+article#pedidos div#pago input{
+	width: 30px;
+	background-color: var(--blanco);
+}
+article#pedidos div#pago input[type="text"]{
+	width: 120px;
+}
 article#pedidos div#formulario_pedido select{
-	width: 29.5vw;
+	width: 51vw;
 	background-color: var(--blanco);
 }
 article#pedidos div#formulario_pedido input#disp{
-	margin-left: 25%;
-	width: 15vw;
+	margin-left: 34%;
+	width: 30vw;
 	border-radius: 5px;
 	background-color: var(--oscuro);
 	border: 1px solid;
@@ -378,6 +400,35 @@ article#pedidos div#formulario_pedido input#disp{
 article#pedidos div#formulario_pedido input#disp:hover{
 	background-color: var(--blanco);
 	transition: 0.3s;
+}
+article#pedidos div#formulario_pedido input#quitar{
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	background-color: var(--claro);
+	border: 1px solid;
+}
+article#pedidos div#formulario_pedido input#quitar:hover{
+	background-color: var(--blanco);
+	transition: 0.3s;
+}
+article#pedidos table{
+	border-collapse: collapse;
+}
+article#pedidos table th:nth-child(2),article#pedidos table th:nth-child(3){
+	width: 100px;
+}
+article#pedidos table tr:nth-child(odd){
+	background-color: var(--oscuro);
+	text-align: center;
+	border: 1px solid black;
+	height: 30px;
+}
+article#pedidos table tr:nth-child(even){
+	background-color: var(--medio);
+	text-align: center;
+	border: 1px solid black;
+	height: 30px;
 }
 
 /*Reservas---------------------------------------------------------------------*/
@@ -409,16 +460,16 @@ article#reservas div#formulario{
 	font-size: 4vw;
 }
 article#reservas div#formulario input{
-	width: 26vw;
+	width: 99%;
 	background-color: var(--blanco);
 }
 article#reservas div#formulario select{
-	width: 26.3vw;
+	width: 100%;
 	background-color: var(--blanco);
 }
 article#reservas div#formulario input#disp{
 	margin-left: 31%;
-	width: 25vw;
+	width: 27vw;
 	border-radius: 5px;
 	background-color: var(--oscuro);
 	border: 1px solid;
@@ -487,7 +538,7 @@ article#contacto div.texto a{
 		font-size: 4vw;
 	}
 	article#contacto div.texto{
-		font-size: 3vw;
+		font-size: 2.5vw;
 	}
 }
 

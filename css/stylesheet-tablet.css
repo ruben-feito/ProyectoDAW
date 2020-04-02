@@ -347,8 +347,9 @@ article#pedidos > div > div:first-of-type{
 	padding-top: 38px;
 }
 article#pedidos h2{
-	padding-left: 2vw;
-	font-size: 26pt;
+	padding-left: 20px;
+	font-size: 5vw;
+	padding-top: 70px;
 }
 article#pedidos div#formulario_pedido{
 	display: block;

@@ -15,7 +15,7 @@ else{ //muestra el formulario sin pulsar submit
 			<p>Tel&eacute;fono:</p>
 			<input type="tel" name="telefono" pattern="^[6789][0-9]{8}$" title="Debe empezar por 6, 7, 8 o 9 y ser de 9 digitos"></input></br>
 			<p>Direcci&oacute;n:</p>
-			<input type="text" name="direccion" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ0-9 \\\/\.\-\ª\º]{3,}$" title="El formato de direccion debe ser válido y de almenos 3 caracteres"></input></br>
+			<input type="text" name="direccion" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ0-9 \\\/\\.\\-\\ª\\º]{3,30}$" title="El formato de direccion debe ser válido y de almenos 3 caracteres"></input></br>
 		</div>
 		<br>
         <input id="disp" class="pedidos" type="submit" name="form" value="Iniciar Sesion"> 

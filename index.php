@@ -20,6 +20,7 @@
 		<script src="./js/slider.js"></script>     
 		<script src="./js/pedidos-reservas.js"></script>     
 		<script src="./js/ajax_platos.js"></script>     
+		<script src="./js/tarjeta.js"></script>     
 	</head>
 	<body>
 		<header>
