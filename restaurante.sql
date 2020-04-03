@@ -55,7 +55,7 @@ INSERT INTO plato VALUES
 (20, "Pastel de Zanahoria", 5.00, "Postre"),
 (21, "Tarta Sacher", 5.00, "Postre"),
 (22, "Nuggets de pollo", 8.00, "Infantil"),
-(23, "Hamburguesa 'El Rincon'", 8.00, "Infantil"),
+(23, "Hamburguesa El Rincon", 8.00, "Infantil"),
 (24, "Huevo frito con Lomo", 8.00, "Infantil"),
 (25, "Merluza", 8.00, "Infantil"),
 (26, "Arroz a la Cubana", 8.00, "Infantil");
