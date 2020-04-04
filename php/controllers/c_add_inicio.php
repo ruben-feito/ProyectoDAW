@@ -1,3 +1,9 @@
+<?php
+	if(!isset($_SESSION['admin'])){ //si no existe sesion admin
+		header("Location: ../../");
+	}
+?>
+
 <html>
    
    <head>

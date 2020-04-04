@@ -13,6 +13,10 @@
     <?php
     session_start();
     include ".././db/db_conexion.php";
+	
+	if(!isset($_SESSION['admin'])){ //si no existe sesion admin
+		header("Location: ../../");
+	}
 
     $conn=conectarBD();
 

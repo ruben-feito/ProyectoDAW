@@ -15,6 +15,9 @@
 
     session_start();
     include ".././db/db_conexion.php";
+	if(!isset($_SESSION['admin'])){ //si no existe sesion admin
+		header("Location: ../../");
+	}
 
     require_once(".././models/m_add_obtenerPlatos.php");
 
