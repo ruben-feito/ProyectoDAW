@@ -16,7 +16,7 @@ División de la página:
 - Inicio: hará volver a la parte más alta del documento y en el que habrá un texto sobre                                                                                                                          los propietarios y la filosofía de negocio.
 - Comidas: tendrá un slider de imágenes de platos del establecimiento y un breve texto.
 - Carta: contendrá un breve texto y un enlace a la carta descargable en .pdf.
-- Pedidos: Sera un formulario dinámico de pedidos contra una base de datos MySQL por medio de PHP. Se creará una sesión según el email introducido para poder hacer el pedido para después ordenar el pedido según un determinado método de pago.
+- Pedidos: Sera un formulario dinámico de pedidos contra una base de datos MySQL por medio de PHP. Se creará una sesión según el email introducido para poder hacer el pedido para después ordenar el pedido según un determinado método de pago. Se harán dos desplegables para los platos usando AJAX.
 - Reservas: será un formulario dinámico de reservas contra una base de datos MySQL por medio de PHP. El local tendrá un numero de mesas disponibles para reserva que se irán llenando a medida que se realicen las reservas online.
 - Contacto: poseerá un mapa indicando el lugar físico del restaurante e información básica sobre horarios y dirección.
 - Los comentarios de clientes serán un slider.
