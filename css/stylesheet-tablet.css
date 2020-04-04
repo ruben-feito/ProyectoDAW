@@ -111,7 +111,7 @@ nav input:checked ~ #overlay {
     width: 100vw;
     z-index: -1;
 }
-/* List */
+/* Lista */
 nav ul {
     -moz-transition-duration: 1s;
     -webkit-transition-duration: 1s;
@@ -142,6 +142,11 @@ nav ul a {
 .fixed{
 	position:fixed; 
 	top:0px;
+}
+@media (orientation: landscape){ /*Apaisado*/
+	nav ul{
+		font-size: 3vw;
+	}
 }
 
 /*Main------------------------------------------------------------------------*/
@@ -182,6 +187,9 @@ article#quienes > div > p:last-of-type{
 
 /*Comidas---------------------------------------------------------------------*/
 article#comidas {
+	-moz-transform: skew(0deg, -6deg) translateY(140px);
+    -webkit-transform: skew(0deg, -6deg) translateY(140px);
+    -o-transform: skew(0deg, -6deg) translateY(140px);
 	transform: skew(0deg, -6deg) translateY(140px);
 	background-color: var(--oscuro);
 	height: 900px;
@@ -189,8 +197,13 @@ article#comidas {
 }
 article#comidas > div {
 	display: flex;
+	-webkit-flex-direction:column;
 	flex-direction: column;
+	-webkit-justify-content: center;
 	justify-content: center;
+	-moz-transform: skew(0deg, 6deg);
+    -webkit-transform: skew(0deg, 6deg);
+    -o-transform: skew(0deg, 6deg);
 	transform: skew(0deg, 6deg);
 	padding-top: 10vw;
 	width: 100%;
@@ -246,6 +259,9 @@ a.control_prev, a.control_next {
 }
 a.control_prev:hover, a.control_next:hover {
 	opacity: 1;
+	-moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
 	transition: 0.3s;
 }
 a.control_prev {
@@ -317,6 +333,9 @@ article#carta div div a{
 }
 article#carta div div:last-of-type:hover{
 	background-color: var(--blanco);
+	-moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
 	transition: 0.3s;
 }
 @media (orientation: landscape){ /*Apaisado*/
@@ -333,7 +352,8 @@ article#carta div div:last-of-type:hover{
 
 /*Pedidos----------------------------------------------------------------------*/
 article#pedidos span{
-    font-family: Droid Sans Bold;
+	font-family: Droid Sans Bold;
+	font-size: 3vw;
 }
 article#pedidos > div{
 	background-color: var(--oscuro);
@@ -347,28 +367,42 @@ article#pedidos > div > div:first-of-type{
 	padding-top: 38px;
 }
 article#pedidos h2{
+	padding-top: 30px;
 	padding-left: 20px;
 	font-size: 5vw;
-	padding-top: 70px;
+}
+article#pedidos div#login{
+	margin-left: 15vw;
+	font-size: 3vw;
 }
 article#pedidos div#formulario_pedido{
 	display: block;
 	background-color: var(--medio);
 	padding: 1vw;
-	width: 40%;
+	width: 60%;
 	height: 50%;
-	font-size: 13pt;
+}
+article#pedidos div#formulario_pedido label{
+	float: left;
+	width: 25%;
 }
 article#pedidos div#formulario_pedido input{
 	width: 29vw;
 	background-color: var(--blanco);
+}
+article#pedidos div#pago input{
+	width: 30px;
+	background-color: var(--blanco);
+}
+article#pedidos div#pago input[type="text"]{
+	width: 120px;
 }
 article#pedidos div#formulario_pedido select{
 	width: 29.5vw;
 	background-color: var(--blanco);
 }
 article#pedidos div#formulario_pedido input#disp{
-	margin-left: 25%;
+	margin-left: 37%;
 	width: 15vw;
 	border-radius: 5px;
 	background-color: var(--oscuro);
@@ -378,7 +412,50 @@ article#pedidos div#formulario_pedido input#disp{
 }
 article#pedidos div#formulario_pedido input#disp:hover{
 	background-color: var(--blanco);
+	-moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
 	transition: 0.3s;
+}
+article#pedidos div#formulario_pedido input#quitar{
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	background-color: var(--claro);
+	border: 1px solid;
+}
+article#pedidos div#formulario_pedido input#quitar:hover{
+	background-color: var(--blanco);
+	-moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+	transition: 0.3s;
+}
+article#pedidos table{
+	border-collapse: collapse;
+}
+article#pedidos table th:nth-child(2),article#pedidos table th:nth-child(3){
+	width: 100px;
+}
+article#pedidos table tr:nth-child(odd){
+	background-color: var(--oscuro);
+	text-align: center;
+	border: 1px solid black;
+	height: 30px;
+}
+article#pedidos table tr:nth-child(even){
+	background-color: var(--medio);
+	text-align: center;
+	border: 1px solid black;
+	height: 30px;
+}
+@media (orientation: landscape){ /*Apaisado*/
+	article#pedidos h2{
+		font-size: 3vw;
+	}
+	article#pedidos div#login{
+		font-size: 2vw;
+	}
 }
 
 /*Reservas---------------------------------------------------------------------*/
@@ -429,6 +506,9 @@ article#reservas div#formulario input#disp{
 }
 article#reservas div#formulario input#disp:hover{
 	background-color: var(--blanco);
+	-moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
 	transition: 0.3s;
 }
 @media (orientation: landscape){ /*Apaisado*/
@@ -507,7 +587,43 @@ div#slider2 div {
 	left: 0;
 	text-align: left;
 	font-size: 0;
+	-moz-animation: 20s slider2 infinite;
+    -webkit-animation: 20s slider2 infinite;
+    -o-animation: 20s slider2 infinite;
 	animation: 20s slider2 infinite; 
+}
+@-moz-keyframes slider2 {
+	0% { left: 0%; }
+	20% { left: 0%; }
+	25% { left: -100%; }
+	45% { left: -100%; }
+	50% { left: -200%; }
+	70% { left: -200%; }
+	75% { left: -300%; }
+	95% { left: -300%; }
+	100% { left: -400%; }
+}
+@-webkit-keyframes slider2 {
+	0% { left: 0%; }
+	20% { left: 0%; }
+	25% { left: -100%; }
+	45% { left: -100%; }
+	50% { left: -200%; }
+	70% { left: -200%; }
+	75% { left: -300%; }
+	95% { left: -300%; }
+	100% { left: -400%; }
+}
+@-o-keyframes slider2 {
+	0% { left: 0%; }
+	20% { left: 0%; }
+	25% { left: -100%; }
+	45% { left: -100%; }
+	50% { left: -200%; }
+	70% { left: -200%; }
+	75% { left: -300%; }
+	95% { left: -300%; }
+	100% { left: -400%; }
 }
 @keyframes slider2 {
 	0% { left: 0%; }
@@ -546,6 +662,7 @@ footer{
 	background-color: var(--azul);
 	display: flex;
 	align-items: center;
+	-webkit-justify-content: center;
 	justify-content: center;
 }
 footer > div > div{

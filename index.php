@@ -15,6 +15,7 @@
 		<link rel="StyleSheet" media="only screen and (min-device-width:761px) and (max-device-width:1024px)" href="./css/stylesheet-tablet.css" type="text/css"/>
 		<link rel="StyleSheet" media="only screen and (min-device-width:1025px)" href="./css/stylesheet-pc.css" type="text/css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="./js/jquery3.4.1min.js"></script>
 		<script src="./js/posicionarMenu.js"></script>
 		<script src="./Js/cerrarMenu.js"></script>
 		<script src="./js/slider.js"></script>     

@@ -51,7 +51,7 @@ else{
         <div id="pago">
             <p>Forma de pago:</p>
             <input type="radio" name="pago" id="efectivo" value="efectivo" checked><label>- Efectivo</label><br>
-            <input type="radio" name="pago" id="tarjeta" value="tarjeta"><label>- Tarjeta</label><input type="text" id="tarjetaText" name="tarjeta" size="16">
+            <input type="radio" name="pago" id="tarjeta" value="tarjeta"><label>- Tarjeta</label><input type="text" id="tarjetaText" name="tarjeta" size="16" pattern="^[0-9]{16}$" title="Introduzca un numero válido">
         </div>
         <input id="disp" name="form" type="submit" value="Finalizar Pedido">
     </form> 
