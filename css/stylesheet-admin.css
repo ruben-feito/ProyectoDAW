@@ -1,0 +1,44 @@
+body{
+	background-color:#BEE4B1;
+}
+img{
+	width:35%;
+	display:block;
+	margin:auto;
+	/*position:absolute;*/
+	margin-bottom:10px;
+	left:33.33%;
+}
+table{
+	text-align:center;
+	border:3px outset orange;
+	width:80%;
+	margin:auto;
+}
+th{
+	padding:10px;
+}
+td{
+	padding:5px; 
+}
+input[type="button"]{
+	margin-left: 20px;
+}
+#desplegable{
+	width:300px;
+}
+#cerrarSesion{
+	background-color:black;
+}
+#fecha{
+	width:150px;
+}
+#submit{
+	background-color:red;
+}
+p{
+	text-align:center;
+	border:3px outset orange;
+	width:30%;
+	margin:auto;
+}
