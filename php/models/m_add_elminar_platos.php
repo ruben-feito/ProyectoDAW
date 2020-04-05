@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION['admin'])){ //si no existe sesion admin
+	header("Location: ../../");
+}
+
 //Seleccionar el id del plato a eliminar
 $sql = "SELECT id FROM plato where nombre='$nombrePlato'";
 $resultado = mysqli_query($conn, $sql);

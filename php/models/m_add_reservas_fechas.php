@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION['admin'])){ //si no existe sesion admin
+	header("Location: ../../");
+}
+
 //Recogida de datos del formulario y tratado de fechas
 $fechaDesde=strtotime($_REQUEST["fechaDesde"]);
 $fechaDesde=date("Y-m-d", $fechaDesde);

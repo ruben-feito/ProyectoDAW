@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION['admin'])){ //si no existe sesion admin
+	header("Location: ../../");
+}
+
 //Funcion que llena el array reservas
 //Parametros: conexion con db
 //Devuelve el array

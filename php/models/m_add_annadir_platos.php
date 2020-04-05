@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION['admin'])){ //si no existe sesion admin
+	header("Location: ../../");
+}
+
 //Recoger informacion del formulario
 $nombre=$_REQUEST['nombre'];
 $precio=$_REQUEST['precio'];
