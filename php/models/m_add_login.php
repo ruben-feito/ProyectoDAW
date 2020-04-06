@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION['admin'])){ //si no existe sesion admin
+	header("Location: .././controllers/c_add_login.php/");
+}
+
 //extraccion de login
 $_SESSION['usuario']=$_REQUEST["usuario"]; //guardamos la sesion con el usuario
 $_SESSION['clave']=$_REQUEST["clave"]; //guardamos la sesion con la clave

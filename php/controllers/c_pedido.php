@@ -1,5 +1,7 @@
 <?php
 
+include "./php/models/m_funcion_enviarCorreo.php";
+
 if(!isset($_SESSION['email'])){
     header("location: ../../"); 
 }

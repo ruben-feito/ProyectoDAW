@@ -1,6 +1,7 @@
 <?php
+    session_start();
 	if(!isset($_SESSION['admin'])){ //si no existe sesion admin
-		header("Location: ../../");
+		header("Location: c_add_login.php");
 	}
 ?>
 

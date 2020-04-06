@@ -1,7 +1,7 @@
 <?php
 
 if(!isset($_SESSION['admin'])){ //si no existe sesion admin
-	header("Location: ../../");
+	header("Location: .././controllers/c_add_login.php/");
 }
 
 //Seleccionar el id del plato a eliminar
