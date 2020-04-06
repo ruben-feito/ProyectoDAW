@@ -75,9 +75,9 @@ foreach ($_SESSION['cesta'] as $id => $unidades) {
 mysqli_commit($conn);
 
 desconectarBD($conn);
-
+/*
 //envio de correo
 $mensaje="Pedido para $direccion está confirmado";
 correo($email, $mensaje);
-
+*/
 ?>
