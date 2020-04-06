@@ -11,9 +11,12 @@ $email=strtolower($_REQUEST["email"]); //el del formulario
 $telefono=$_REQUEST["telefono"]; //el del formulario
 
 reservar($comensales, $fecha, $hora, $email, $telefono);
+
 /*
+//NO FUNCIONA, CLOUDING.IO TIENE CAPADO SMTP
 //envio de correo
 $mensaje="Reserva para dia $fecha $hora con $comensales comensal/es está confirmada";
 correo($email, $mensaje);
 */
+
 ?>

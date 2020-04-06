@@ -76,6 +76,7 @@ mysqli_commit($conn);
 
 desconectarBD($conn);
 /*
+//NO FUNCIONA, CLOUDING.IO TIENE CAPADO SMTP
 //envio de correo
 $mensaje="Pedido para $direccion está confirmado";
 correo($email, $mensaje);
