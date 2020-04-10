@@ -7,9 +7,14 @@ function correo($email, $message){
     $to=$email;
     $subject="El Rincon Del Sin";
     $message=$message;
-    //$headers="From: elrincondelsin.mail@gmail.com";
+    $headers='From: elrincondelsin.mail@gmail.com' . "\r\n" .
+    'Reply-To: elrincondelsin.mail@gmail.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
 
-    mail($to, $subject, $message);
+    $funciona=mail($to, $subject, $message, $headers);
+    if(!$funciona){
+        echo "<br>Mail no enviado";
+    }
 }
 
 ?>
