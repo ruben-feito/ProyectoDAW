@@ -5,10 +5,8 @@ mysql_root_password = "root"
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
-  
-  #config.vm.define "lamp" do|lamp|
-  #lamp.vm.hostname = "lamp" 
-  config.vm.hostname = "lamp" 
+
+  #config.vm.hostname = "lamp" 
   
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.provider "virtualbox" do |vb|
