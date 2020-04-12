@@ -32,4 +32,3 @@ BIBLIOGRAFÍA:
 - https://www.w3schools.com/
 - https://es.stackoverflow.com/
 - https://developer.mozilla.org/es/docs/Web
-- https://reviblog.net/2014/03/04/como-instalar-y-configurar-un-servidor-de-correo-smtp-para-enviar-emails-desde-localhost-con-php-linux/ (para configurar el SMTP)
