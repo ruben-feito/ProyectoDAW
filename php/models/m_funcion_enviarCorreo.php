@@ -13,7 +13,7 @@ function correo($email, $message){
 
     $funciona=mail($to, $subject, $message, $headers);
     if(!$funciona){
-        echo "<br>Error al enviar el email";
+        echo "<br>Mail no enviado";
     }
 }
 
