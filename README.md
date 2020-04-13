@@ -3,12 +3,13 @@ Restaurante El Rincón del 'Sin'.
 
 Rubén F., Alberto J. y Jesús M.
 
-DEFINICION DEL PROBLEMA: Desarrollar un sitio web responsivo y lo mas accesible posible de una empresa de restauración. Se tratará de una web en una sola página donde los enlaces redireccionarán a sí misma, pero en diferente altura. 
+DEFINICION DEL PROBLEMA: <br />
+Desarrollar un sitio web responsivo y lo mas accesible posible de una empresa de restauración. Se tratará de una web en una sola página donde los enlaces redireccionarán a sí misma, pero en diferente altura. 
 Contará con un menú y las opciones de: Inicio, Comidas, Carta, Pedidos, Reservas y Contacto. Además, habrá que añadir comentarios de clientes y enlaces a redes sociales.
 La gama de colores predominante deberán ser los verdes en tonos pasteles, crema y/o colores combinables.
 Se necesita una aplicacion secundaria para el administrador.
 
-OBJETIVOS: 
+OBJETIVOS: <br />
 Deberá dar soporte visual personalizado a los dispositivos más comúnmente empleados véase terminales móviles, tabletas y ordenadores de sobremesa:
 - De 0px a 760px para móviles.
 - De 761px a 1024px para tabletas.
@@ -23,6 +24,26 @@ División de la página:
 - Los comentarios de clientes serán un slider.
 - Los enlaces de RRSS redirigirán a las principales del servicio al no disponer de unas propias.
 - La aplicacion del administrador esta en /admin.php con las funciones básicas de administración.
+
+ENTORNO DE DESARROLLO:<br />
+El repositorio tiene incorporado su propio entorno de desarrollo con **Vagrant**, es una copia exacta del entorno de producción.
+- ubuntu/trusty64 (14.04.6 LTD)
+- apache2 (2.4.7)
+- mysql 5.5.62
+- php 5.5.9
+- phpmyadmin
+- ssmtp
+- git
+
+Para iniciar `vagrant up` (la primera vez tarda mas por que instala todo). <br />
+Para parar `vagrant halt`. <br />
+Para borrar `vagrant destroy`. <br />
+Para meterse en la máquina `vagrant ssh` Pass: vagrant . <br /><br />
+DB USER = root <br />
+DB PASS = rootroot <br />
+Carpeta de trabajo `/var/www/html/`.<br />
+IP de acceso 192.168.33.10 <br />
+phpmyadmin 192.168.33.10/phpmyadmin/<br />
 
 BIBLIOGRAFÍA:
 - https://codepen.io/
