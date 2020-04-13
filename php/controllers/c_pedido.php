@@ -1,5 +1,6 @@
 <?php
 
+require_once ("./php/models/m_funcion_introducirPago.php");
 require_once ("./php/models/m_funcion_enviarCorreo.php");
 
 if(!isset($_SESSION['email'])){
@@ -9,11 +10,12 @@ if(!isset($_SESSION['email'])){
 if($_SERVER["REQUEST_METHOD"]=="POST" && $_REQUEST['form']=="Finalizar Pedido"){
 
     //llamada a modelo
-    require_once("./php/models/m_pedido.php");
+    require_once("./php/models/m_pedido.php"); //tiene incluido tanto efectivo como tarjeta
 
-    //llamada a vista
-    require_once("./php/views/v_pedido.php");
-
+    if($metodo_pago=="efectivo"){
+         //llamada a vista
+        require_once("./php/views/v_pedido.php");
+    }
 }
 else{
     ?>

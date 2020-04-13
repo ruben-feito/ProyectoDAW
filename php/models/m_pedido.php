@@ -7,74 +7,62 @@ if(!isset($_SESSION['email'])){ //si no existe sesion iniciada
 $email=$_SESSION['email'];
 $telefono=$_SESSION['telefono'];
 $direccion=$_SESSION['direccion'];
-$metodo_pago=$_REQUEST['pago']; //el metodo de pago
-
-$conn=conectarBD(); //la conexion dentro para solo abrirla en la pedidos y no a todo aquel que entre en la web
-
-//buscar el cliente
-$sql="SELECT COUNT(email) as email FROM cliente WHERE email='$email'";
-$resultado=mysqli_query($conn, $sql); //el $resultado no es valido y hay que tratarlo
-$row=mysqli_fetch_assoc($resultado);
-$existe=$row['email']; //si no existe hay que crearlo y si existe actualizar datos
-
-if($existe==0){
-    //insertar en tabla cliente un nuevo cliente registrando su TIMESTAMP
-    $sql="INSERT INTO cliente (email, telefono, direccion) VALUES ('$email', '$telefono', '$direccion')";
-    if(!mysqli_query($conn, $sql)){
-        echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
-    }
-    mysqli_commit($conn);
-}
-else{
-    //actualizar en tabla cliente el cliente añadiendo tlf y direccion y su TIMESTAMP
-    $sql="UPDATE cliente SET telefono=$telefono, direccion='$direccion' WHERE email='$email'";
-    if(!mysqli_query($conn, $sql)){
-        echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
-    }
-    mysqli_commit($conn);
-}
-
-//sacar el numero maximo de pedido
-$sql="SELECT MAX(num_pedido) as maximo FROM pedido";
-$resultado=mysqli_query($conn, $sql); //el $resultado no es valido y hay que tratarlo
-$row=mysqli_fetch_assoc($resultado);
-$maximo=$row['maximo']; //si no existe hay que crearlo y si existe actualizar datos
-
-if($maximo==null){ //bd vacia
-    $maximo=1;
-}
-else{
-    $maximo++; // si no sumarle 1
-}
+$metodo_pago=$_REQUEST['pago']; 
+$total=$_SESSION['total'];
 
 if($metodo_pago=="efectivo"){
-    //insertar pedido registrando su TIMESTAMP
-    $sql="INSERT INTO pedido (num_pedido, email, metodo_pago) VALUES ('$maximo', '$email', '$metodo_pago')";
-    if(!mysqli_query($conn, $sql)){
-        echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
-    }
+    introducirPago($email, $telefono, $direccion, $metodo_pago, $total);
 }
 else if($metodo_pago=="tarjeta"){
-    $tarjeta=$_REQUEST['tarjeta']; //tarjeta
-    //insertar pedido registrando su TIMESTAMP
-    $sql="INSERT INTO pedido (num_pedido, email, metodo_pago, tarjeta) VALUES ('$maximo', '$email', '$metodo_pago', '$tarjeta')";
-    if(!mysqli_query($conn, $sql)){
-        echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
-    }
+    include "api/apiRedsys.php";  
+    $miObj = new RedsysAPI;
+
+    //$url_tpv = 'https://sis.redsys.es/sis/realizarPago';
+    $url= $_SERVER['HTTP_REFERER'];
+    $url_tpv = 'https://sis-t.redsys.es:25443/sis/realizarPago';
+    $version = "HMAC_SHA256_V1"; 
+    $clave = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; //poner la clave SHA-256
+    $name = 'EL RINCON DEL SIN'; 
+    $code = '999008881'; 
+    $terminal = '1';
+    $order = date('ymdHis');
+    $amount = $total * 100;
+    $currency = '978';
+    $consumerlng = '001';
+    $transactionType = '0';
+    $urlMerchant = $url; 
+    $urlweb_ok = $url.'php/controllers/c_exito.php'; 
+    $urlweb_ko = $url; 
+
+    $miObj->setParameter("DS_MERCHANT_AMOUNT", $amount);
+    $miObj->setParameter("DS_MERCHANT_CURRENCY", $currency);
+    $miObj->setParameter("DS_MERCHANT_ORDER", $order);
+    $miObj->setParameter("DS_MERCHANT_MERCHANTCODE", $code);
+    $miObj->setParameter("DS_MERCHANT_TERMINAL", $terminal);
+    $miObj->setParameter("DS_MERCHANT_TRANSACTIONTYPE", $transactionType);
+    $miObj->setParameter("DS_MERCHANT_MERCHANTURL", $urlMerchant);
+    $miObj->setParameter("DS_MERCHANT_URLOK", $urlweb_ok);      
+    $miObj->setParameter("DS_MERCHANT_URLKO", $urlweb_ko);
+    $miObj->setParameter("DS_MERCHANT_MERCHANTNAME", $name); 
+    $miObj->setParameter("DS_MERCHANT_CONSUMERLANGUAGE", $consumerlng);    
+
+    $params = $miObj->createMerchantParameters();
+    $signature = $miObj->createMerchantSignature($clave);
+    ?>
+    <form id="realizarPago" action="<?php echo $url_tpv; ?>" method="post">
+        <input type='hidden' name='Ds_SignatureVersion' value='<?php echo $version; ?>'> 
+        <input type='hidden' name='Ds_MerchantParameters' value='<?php echo $params; ?>'> 
+        <input type='hidden' name='Ds_Signature' value='<?php echo $signature; ?>'> 
+    </form>
+    <p>Un momento por favor...</p>
+    <script>
+    $(document).ready(function () {
+        $("#realizarPago").submit();
+    });
+    </script>
+    <?php
+    introducirPago($email, $telefono, $direccion, $metodo_pago, $total);
 }
-mysqli_commit($conn);
-
-
-//insertar desglose_pedido
-foreach ($_SESSION['cesta'] as $id => $unidades) {
-    $sql = "INSERT INTO desglose_pedido (num_pedido, id_plato, unidades) VALUES ('$maximo', '$id', '$unidades')";
-    if (!mysqli_query($conn, $sql)) {
-        echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
-    } 
-}
-mysqli_commit($conn);
-
-desconectarBD($conn);
 
 //envio de correo
 $mensaje="Pedido para $direccion está confirmado";
