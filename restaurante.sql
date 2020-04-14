@@ -64,9 +64,9 @@ CREATE TABLE IF NOT EXISTS pedido (
     num_pedido INT UNSIGNED NOT NULL PRIMARY KEY,
     email VARCHAR(30) NOT NULL,
     metodo_pago VARCHAR(8) NOT NULL,
-    tarjeta VARCHAR(16),  /*NO INT, puede empezar por 0*/
+    total FLOAT UNSIGNED NOT NULL,
     fecha_registro TIMESTAMP,
-  
+    
     CONSTRAINT fk_email_pedido FOREIGN KEY (email) 
     REFERENCES cliente (email)
     ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -86,5 +86,3 @@ CREATE TABLE IF NOT EXISTS desglose_pedido (
     REFERENCES pedido (num_pedido)
     ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
-
-ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'rootroot';

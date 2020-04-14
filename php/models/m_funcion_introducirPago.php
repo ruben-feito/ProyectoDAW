@@ -48,7 +48,6 @@ function introducirPago($email, $telefono, $direccion, $metodo_pago, $total){
 
     mysqli_commit($conn);
 
-
     //insertar desglose_pedido
     foreach ($_SESSION['cesta'] as $id => $unidades) {
         $sql = "INSERT INTO desglose_pedido (num_pedido, id_plato, unidades) VALUES ('$maximo', '$id', '$unidades')";

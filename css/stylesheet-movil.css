@@ -22,6 +22,10 @@ header div#banner img{
 	display:none; /*Quitar la Imagen banner*/
 }
 /*Menu-Nav---------------------------------------------------------------------------*/
+.enlace_desactivado {
+	pointer-events: none;
+	cursor: default;
+}
 .menu {
     background: white;
     color: black;

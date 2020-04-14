@@ -30,6 +30,10 @@ header div#banner img{
 }
 
 /*Menu-Nav---------------------------------------------------------------------------*/
+.enlace_desactivado {
+	pointer-events: none;
+	cursor: default;
+}
 nav input, nav label{ /*quitar el menu de movil*/
 	display: none;
 }
