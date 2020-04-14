@@ -39,15 +39,22 @@ El repositorio tiene incorporado su propio entorno de desarrollo con **Vagrant**
 - ssmtp
 - git<br />
 Para iniciar o acceder la máquina Guest debemos estar situados en el directorio de trabajo de la máquina HOST y abrir un terminal.<br />
-Para iniciar ```vagrant up```  <br />
-Para parar `vagrant halt` <br />
-Para borrar `vagrant destroy` <br />
-Para meterse en la máquina GUEST `vagrant ssh` Pass: vagrant . <br /><br />
-DB USER = root <br />
-DB PASS = rootroot <br />
-Directorio de trabajo en máquina GUEST `/var/www/html/`.<br />
-IP de acceso 192.168.33.10 <br />
-phpmyadmin 192.168.33.10/phpmyadmin/<br />
+- Para iniciar: `vagrant up` (la primera vez tarda más)<br />
+- Para parar: `vagrant halt` 
+- Para borrar: `vagrant destroy` 
+- Para acceder a la máquina GUEST: `vagrant ssh` _Pass: vagrant_
+- Directorio de trabajo en máquina GUEST: `/var/www/html/`
+- Credenciales MySQL: `User: root` `Pass: rootroot`
+- IP acceso desde la máquina HOST: `192.168.33.10`
+- Acceso a phpmyadmin desde la máquina HOST: `192.168.33.10/phpmyadmin/`
+- Tarjeta con pago válido:
+  - Numeración: 4548812049400004
+  - Caducidad: 12/20
+  - Código CVV2: 123
+- Tarjeta con pago no válido
+  - Numeración: 5576440022788500
+  - Caducidad: 12/20
+  - Código CVV2: 123
 
 **BIBLIOGRAFÍA:**
 ---
