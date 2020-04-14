@@ -37,11 +37,11 @@ El repositorio tiene incorporado su propio entorno de desarrollo con **Vagrant**
 - php 5.5.9
 - phpmyadmin
 - ssmtp
-- git
-Para iniciar o acceder la máquina Guest
-Para iniciar `vagrant up` (la primera vez tarda mas por que instala todo). <br />
-Para parar `vagrant halt`. <br />
-Para borrar `vagrant destroy`. <br />
+- git<br />
+Para iniciar o acceder la máquina Guest debemos estar situados en el directorio de trabajo de la máquina HOST y abrir un terminal.<br />
+Para iniciar ```vagrant up```  <br />
+Para parar `vagrant halt` <br />
+Para borrar `vagrant destroy` <br />
 Para meterse en la máquina GUEST `vagrant ssh` Pass: vagrant . <br /><br />
 DB USER = root <br />
 DB PASS = rootroot <br />
