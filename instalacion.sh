@@ -11,7 +11,7 @@ echo Instalando mysql **********************************************************
 debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password password $DBPASSWD"
 debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password_again password $DBPASSWD"
 debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
-debconf-set-selections <<< "phpmyadmin	phpmyadmin/setup-password password $DBPASSWD"
+debconf-set-selections <<< "phpmyadmin phpmyadmin/setup-password password $DBPASSWD"
 debconf-set-selections <<< "phpmyadmin phpmyadmin/app-password-confirm password $DBPASSWD"
 debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/admin-pass password $DBPASSWD"
 debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/app-pass password $DBPASSWD"
