@@ -1,7 +1,7 @@
 <?php
 
 if(!isset($_SESSION['admin'])){ //si no existe sesion admin
-	header("Location: .././controllers/c_add_login.php/");
+	header("Location: ../../admin.php");
 }
 
 //Recogida de datos del formulario y tratado de fechas

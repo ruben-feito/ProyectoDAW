@@ -16,7 +16,7 @@
     include ".././db/db_conexion.php";
 	
 	if(!isset($_SESSION['admin'])){ //si no existe sesion admin
-		header("Location: ../../");
+		header("Location: c_add_login.php");
 	}
 
     require_once(".././models/m_add_clientes.php");
