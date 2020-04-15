@@ -7,15 +7,16 @@ if(!isset($_SESSION['email'])){
     header("location: ../../"); 
 }
 
-if($_SERVER["REQUEST_METHOD"]=="POST" && $_REQUEST['form']=="Finalizar Pedido"){
+if(isset($_SESSION) && $_SERVER["REQUEST_METHOD"]=="POST" && $_REQUEST['form']=="Finalizar Pedido"){
 
     //llamada a modelo
     require_once("./php/models/m_pedido.php"); //tiene incluido tanto efectivo como tarjeta
 
     if($metodo_pago=="efectivo"){
-         //llamada a vista
-        require_once("./php/views/v_pedido.php");
-    }
+        //llamada a vista
+       require_once("./php/views/v_pedido.php");
+   }
+
 }
 else{
     ?>
@@ -37,7 +38,6 @@ else{
         <input id="disp" class="pedidos" type="submit" name="form" value="Añadir">
     <form>
     <?php
-
 
     //visualizar cesta la primera vez
     $conn=conectarBD();

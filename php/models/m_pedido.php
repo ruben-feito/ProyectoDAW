@@ -19,6 +19,7 @@ if($metodo_pago=="efectivo"){
     //envio de correo
     $mensaje="Pedido para $direccion está confirmado";
     correo($email, $mensaje);
+
 }
 else if($metodo_pago=="tarjeta"){
 

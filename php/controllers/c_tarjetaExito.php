@@ -47,9 +47,7 @@
 					<div><h2>PEDIDOS</h2></div>
 					<div id="formulario_pedido">
 						<p><span>Pago realizado con &eacute;xito</span></p>
-						<form method="POST" action="" target="">
-							<input id="disp" class="pedidos" type="submit" name="form" value="Cerrar Sesion">
-						</form>
+						<input id="disp" type="button" value="Cerrar Sesion" onclick="window.location.href='.././models/m_cerrar_sesion.php'"/>
 					</div>
 				</div>
             </article>
@@ -57,7 +55,9 @@
     </body>
 </html>
 <?php
+
 //llamada a modelo
 require_once("../models/m_tarjetaExito.php");
 	
 ?>
+
