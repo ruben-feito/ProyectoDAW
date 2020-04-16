@@ -16,7 +16,7 @@ Se necesita una aplicacion secundaria para el administrador.
 Deberá dar soporte visual personalizado a los dispositivos más comúnmente empleados véase terminales móviles, tabletas y ordenadores de sobremesa:
 - De 0px a 760px para móviles.
 - De 761px a 1024px para tabletas.
-- De 1025px en adelante para ordenadores.
+- De 1025px en adelante para ordenadores.<br />
 División de la página:
 - Inicio: hará volver a la parte más alta del documento y en el que habrá un texto sobre los propietarios y la filosofía de negocio.
 - Comidas: tendrá un slider de imágenes de platos del establecimiento y un breve texto.
