@@ -17,7 +17,7 @@ if ($resultado){
     $existe=$row['numero']; //ya existe ese plato
 }
 
-if($existe==1){
+if($existe==1 || $nombre=="" || $precio==""){
     
 }
 
