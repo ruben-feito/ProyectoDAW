@@ -27,7 +27,7 @@ sudo apt-get -y install php5 libapache2-mod-php5 php5-mcrypt php5-mysql
 sudo service apache2 restart
 
 echo Instalando git ***************************************************************
-sudo aptget install git
+sudo apt-get install git
 
 echo Instalando SSMTP**************************************************************
 sudo apt-get -y install ssmtp
