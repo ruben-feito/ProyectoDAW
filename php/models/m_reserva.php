@@ -16,4 +16,8 @@ reservar($comensales, $fecha, $hora, $email, $telefono);
 $mensaje="Reserva para dia $fecha $hora con $comensales comensal/es está confirmada";
 correo($email, $mensaje);
 
+//vaciar cesta
+unset($_SESSION['cesta'][$id]);
+header("Refresh:0"); //Para mostrar la cesta vacía
+
 ?>
