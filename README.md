@@ -4,6 +4,16 @@
 
 Rubén F., Alberto J. y Jesús M.
 
+**CONTENIDO DE CARPETAS:** <br />
+---
+- [Memoria](https://github.com/ruben-feito/ProyectoDAW/tree/master/Memoria) contiene todo lo relacionado con la memoria escrita.
+- [api](https://github.com/ruben-feito/ProyectoDAW/tree/master/api) contiene el codigo para apiRedsys y para diferentes versiones de PHP.
+- [css](https://github.com/ruben-feito/ProyectoDAW/tree/master/css) contiene todas las reglas de estilo CSS.
+- [fonts](https://github.com/ruben-feito/ProyectoDAW/tree/master/fonts) contiene las fuentes utilizadas en el sitio web.
+- [img](https://github.com/ruben-feito/ProyectoDAW/tree/master/img) contiene todas las imagenes usadas o de reserva ordenadas.
+- [js](https://github.com/ruben-feito/ProyectoDAW/tree/master/js) contiene todos los archivos de codigo Javascript y jQuery usados.
+- [php](https://github.com/ruben-feito/ProyectoDAW/tree/master/php) contiene todos los archivos PHP ordenados de forma MVC (Modelo Vista Controlador).
+
 **DEFINICION DEL PROBLEMA:** <br />
 ---
 Desarrollar un sitio web responsivo y lo mas accesible posible de una empresa de restauración. Se tratará de una web en una sola página donde los enlaces redireccionarán a sí misma, pero en diferente altura. <br />
@@ -31,6 +41,7 @@ División de la página:
 
 **ENTORNO DE DESARROLLO:**<br />
 ---
+Necesitamos tener instalado [Vagrant](https://www.vagrantup.com/downloads.html) y [VirtualBox](https://www.virtualbox.org/wiki/Downloads)<br />
 El repositorio tiene incorporado su propio entorno de desarrollo con **Vagrant**, es una copia exacta del entorno de producción.
 - ubuntu/trusty64 (14.04.6 LTD)
 - apache2 (2.4.7)
@@ -39,7 +50,8 @@ El repositorio tiene incorporado su propio entorno de desarrollo con **Vagrant**
 - phpmyadmin
 - ssmtp
 - git<br />
-Para iniciar o acceder la máquina Guest debemos estar situados en el directorio de trabajo de la máquina HOST y abrir un terminal.<br />
+
+Para iniciar o acceder la máquina GUEST debemos estar situados en el directorio de trabajo de la máquina HOST y abrir un terminal.<br />
 - Para iniciar: `vagrant up` (la primera vez tarda más)<br />
 - Para parar: `vagrant halt` 
 - Para borrar: `vagrant destroy` 
