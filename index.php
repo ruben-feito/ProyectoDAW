@@ -17,7 +17,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="./js/jquery3.4.1min.js"></script>
 		<script src="./js/posicionarMenu.js"></script>
-		<script src="./Js/cerrarMenu.js"></script>
+		<script src="./js/cerrarMenu.js"></script>
 		<script src="./js/slider.js"></script>     
 		<script src="./js/pedidos-reservas.js"></script>     
 		<script src="./js/ajax_platos.js"></script>            
