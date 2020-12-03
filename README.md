@@ -46,8 +46,6 @@ Para iniciar o acceder la máquina Guest debemos estar situados en el directorio
 - Para acceder a la máquina GUEST: `vagrant ssh` _Pass: vagrant_
 - Directorio de trabajo en máquina GUEST: `/var/www/html/`
 - Credenciales MySQL: `User: root` `Pass: rootroot`
-- IP acceso desde la máquina HOST: `192.168.33.10`
-- Acceso a phpmyadmin desde la máquina HOST: `192.168.33.10/phpmyadmin/`
 - Tarjeta con pago válido:
   - Numeración: 4548812049400004
   - Caducidad: 12/20
